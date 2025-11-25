@@ -1,0 +1,223 @@
+<!doctype html>
+
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>İrem Tuana Bayat — Yazılım & Yapay Zeka</title>
+  <style>
+    /* 🎨 CSS Değişiklikleri */
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #7c3aed;
+      --muted: #94a3b8;
+      --glass: rgba(255,255,255,0.05);
+      --highlight: #a879f9; /* Yeni: Başlıklar için hafif vurgu rengi */
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: #e6eef6;
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: auto;
+      padding: 28px;
+    }
+
+    /* === YENİ: ANASAYFA BAŞLIK ALANI (HOME) BÜYÜTÜLDÜ === */
+    header {
+      display: flex;
+      flex-direction: column; /* Öğeleri alt alta hizala */
+      align-items: center; /* Öğeleri ortala */
+      text-align: center;
+      gap: 20px;
+      padding: 40px 0; /* Üst ve alttan dolgu ekleyerek alanı büyüt */
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.03); /* Hafif arkaplan vurgusu */
+      border-radius: 18px;
+    }
+
+    .avatar {
+      width: 150px; /* BÜYÜTÜLDÜ */
+      height: 150px; /* BÜYÜTÜLDÜ */
+      border-radius: 50%; /* Daire şekli */
+      background: linear-gradient(135deg, var(--accent), #ef7bcf);
+      padding: 5px; /* Çerçeve kalınlığı */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--accent); /* Dış çerçeve efekti */
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%; /* Daire şekli */
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 48px; /* BÜYÜTÜLDÜ */
+      background: linear-gradient(90deg, #fff, var(--highlight));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; /* Neon başlık efekti */
+    }
+
+    p.lead {
+      color: var(--muted);
+      margin-top: 8px; /* Boşluk artırıldı */
+      font-size: 1.2em;
+      max-width: 600px;
+    }
+    /* === YENİ BİTİŞ === */
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background: var(--glass);
+      padding: 20px;
+      border-radius: 14px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 22px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 22px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .skills .bar {
+      height: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 6px;
+      margin-bottom: 15px;
+    }
+
+    .skills .bar i {
+      height: 100%;
+      display: block;
+      background: linear-gradient(90deg, var(--accent), #ff7ab6);
+    }
+    
+    nav a {
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background-color 0.2s;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 26px;
+      color: var(--muted);
+    }
+
+    @media(max-width:900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      header {
+          padding: 30px 10px;
+      }
+      h1 {
+          font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav style="display:flex;gap:20px;margin-bottom:24px">
+      <a href="#home" onclick="showPage('home')" style="color:#e6eef6;text-decoration:none;font-weight:600">Ana Sayfa</a>
+      <a href="#about" onclick="showPage('about')" style="color:#e6eef6;text-decoration:none;font-weight:600">Hakkımda</a>
+      <a href="#skills" onclick="showPage('skills')" style="color:#e6eef6;text-decoration:none;font-weight:600">Beceriler</a>
+      <a href="#contact" onclick="showPage('contact')" style="color:#e6eef6;text-decoration:none;font-weight:600">İletişim</a>
+    </nav>
+    <div id="home" class="page">
+      <header>
+        <div class="avatar">
+          <img src="C:\Users\W11\Desktop\WhatsApp Görsel 2025-11-25 saat 15.53.53_b1d59d55.jpg" alt="Benim Profil Resmim">
+        </div>
+        <div>
+          <h1>İrem Tuana Bayat</h1>
+          <p class="lead">Yapay zeka ve yazılım geliştirme alanında kendini sürekli geliştiren, çözüm odaklı bir önlisans öğrencisi.</p>
+        </div>
+      </header>
+    </div>
+    <div id="about" class="page" style="display:none">
+      <section class="card">
+        <h2>Hakkımda</h2>
+        <p>Yapay zeka ve yazılım geliştirme alanlarında aktif olarak kendini geliştiren, öğrenmeye açık ve çözüm odaklı bir öğrenciyim. Hem teknik becerilerimi hem de iletişim yeteneklerimi geliştirerek yazılım dünyasında sağlam bir kariyer hedefliyorum.</p>
+        <h2>Eğitim</h2>
+        <ul>
+          <li><strong>Sakarya Uygulamalı Bilimler Üniversitesi</strong> — Yapay Zeka Operatörlüğü (Önlisans, devam ediyor)</li>
+          <li><strong>Anadolu Üniversitesi</strong> — Bilgisayar Programcılığı (AÖF, devam ediyor)</li>
+        </ul>
+      </section>
+    </div>
+    <div id="skills" class="page" style="display:none">
+      <aside class="sidebar">
+        <div class="card skills">
+          <h2>Yazılım Bilgisi</h2>
+          <p><strong>C#</strong> — Orta</p>
+          <div class="bar"><i style="width:65%"></i></div>
+          <p><strong>Python</strong> — Orta</p>
+          <div class="bar"><i style="width:60%"></i></div>
+          <p><strong>SQL</strong> — Başlangıç</p>
+          <div class="bar"><i style="width:40%"></i></div>
+          <p><strong>C</strong> — Başlangıç</p>
+          <div class="bar"><i style="width:35%"></i></div>
+          <p><strong>HTML & CSS</strong> — Orta</p>
+          <div class="bar"><i style="width:70%"></i></div>
+        </div>
+      </aside>
+    </div>
+    <div id="contact" class="page" style="display:none">
+      <div class="card" style="margin-top:16px">
+        <h2>İletişim</h2>
+        <p><strong>Konum:</strong> Orhangazi, Bursa</p>
+        <p><strong>Telefon:</strong> 0505 182 16 05</p>
+        <p><strong>E-posta:</strong> tuanairembayat@gmail.com</p>
+        <p><strong>GitHub:</strong> github.com/iremtuanabayat</p>
+      </div>
+    </div>
+    <footer>
+      © 2025 İrem Tuana Bayat — Kişisel Web Sitesi
+    </footer>
+  </div>
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+    // Sayfa yüklendiğinde varsayılan olarak ana sayfayı göster
+    showPage('home');
+  </script>
+</body>
+</html>
